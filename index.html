@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Piazzolla:wght@200&family=Playfair:ital@1&display=swap');
+</style>
+
+ <style>
+@media screen and (max-width: 1280px) {div.contentblock {width: 1200px;} } 
+@media screen and (max-width: 1140px) { div.contentblock {width: 1024px;} } 
+@media screen and (max-width: 992px) { div. contentblock {width: 970px;} } 
+
+
+
+.hgh{
+      margin: 0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: 1.5;
+      -webkit-text-size-adjust: 100%;
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+      display: flex;
+      justify-content: center;
+    }
+
+    .timer__items {
+      display: flex;
+      font-size: 25px;
+      color: #BB172E;
+    }
+
+
+    .timer__item {
+      position: relative;
+      min-width: 60px;
+      margin-left: 10px;
+      margin-right: 10px;
+      padding-bottom: 15px;
+    }
+
+
+    .timer__item::before {
+      content: attr(data-title);
+      display: block;
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      transform: translateX(-50%);
+      font-size: 10px;
+    }
+
+
+    .timer__item:not(:last-child)::after {
+      content: ':';
+      position: absolute;
+      right: -15px;
+    }
+  </style>
+
+
+  <script>
+
+
+    document.addEventListener('DOMContentLoaded', function () {
+      // конечная дата
+      const deadline = new Date(new Date().getFullYear(), new Date().getMonth() + 2, 11);
+      // id таймера
+      let timerId = null;
+      // склонение числительных
+      function declensionNum(num, words) {
+        return words[(num % 100 > 4 && num % 100 < 20) ? 2 : [2, 0, 1, 1, 1, 2][(num % 10 < 5) ? num % 10 : 5]];
+      }
+      // вычисляем разницу дат и устанавливаем оставшееся времени в качестве содержимого элементов
+      function countdownTimer() {
+        const diff = deadline - new Date();
+        if (diff <= 0) {
+          clearInterval(timerId);
+        }
+        const days = diff > 0 ? Math.floor(diff / 1000 / 60 / 60 / 24) : 0;
+        const hours = diff > 0 ? Math.floor(diff / 1000 / 60 / 60) % 24 : 0;
+        const minutes = diff > 0 ? Math.floor(diff / 1000 / 60) % 60 : 0;
+        const seconds = diff > 0 ? Math.floor(diff / 1000) % 60 : 0;
+        $days.textContent = days < 10 ? '0' + days : days;
+        $hours.textContent = hours < 10 ? '0' + hours : hours;
+        $minutes.textContent = minutes < 10 ? '0' + minutes : minutes;
+        $seconds.textContent = seconds < 10 ? '0' + seconds : seconds;
+        $days.dataset.title = declensionNum(days, ['день', 'дня', 'дней']);
+        $hours.dataset.title = declensionNum(hours, ['час', 'часа', 'часов']);
+        $minutes.dataset.title = declensionNum(minutes, ['минута', 'минуты', 'минут']);
+        $seconds.dataset.title = declensionNum(seconds, ['секунда', 'секунды', 'секунд']);
+      }
+      // получаем элементы, содержащие компоненты даты
+      const $days = document.querySelector('.timer__days');
+      const $hours = document.querySelector('.timer__hours');
+      const $minutes = document.querySelector('.timer__minutes');
+      const $seconds = document.querySelector('.timer__seconds');
+      // вызываем функцию countdownTimer
+      countdownTimer();
+      // вызываем функцию countdownTimer каждую секунду
+      timerId = setInterval(countdownTimer, 1000);
+    });
+  </script>
+
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<title>Тойға шақыру!</title>
+
+  </head>
+  <body>
+
+
+<img src="gjdhjbhngjyn.png" style="width: 100%; height: 100%;">
+
+
+<center>
+<audio controls="controls" autoplay="autoplay" style="margin-top:5px; height: 20px;
+  width: 70%;">
+<source src="kazybek-kurajysh-minezin-korkem_(kmuzon.com).mp3" type="audio/mp3">
+</audio></center>
+
+
+<center><h4 style="font-family:piazzolla; color: #BB172D; margin-top: 8px; ">Құрметті ағайын-туыс,<br>
+құда-жекжат, дос-жаран!</h4></center>
+
+
+
+<center><h6 style="font-family:piazzolla; color: #FF5572; margin-top: 15px; ">Сіздерді аяулы қызымыз
+</h6></center>
+
+<center><img src="tyjmyughkmuhk.png" style="width:70%; margin-top: 0px;"></center>
+
+
+
+
+<center><h5 style="font-family:piazzolla; color: #BB172D; margin-top: 15px; ">Ұядан ұшу күніне арналған <br> 
+ақ дастарханымыздың қадірлі <br>
+қонағы болуға шақырамыз
+</h5></center>
+
+<center><h5 style="font-family:piazzolla; color: #BB172D; margin-top: 22px; ">10.08.2023 жыл
+</h5></center>
+<center><h5 style="font-family:piazzolla; color: #FF5572; margin-top: 0px; ">сағат 17:00 де
+</h5></center>
+
+
+<center><h5 style="font-family:piazzolla; color: #BB172D; margin-top: 22px; ">Ай Көркем рестораны
+</h5></center>
+<center><h5 style="font-family:piazzolla; color: #FF5572; margin-top: 0px; ">Алматы қаласы,с Бесағаш,Талгарский р-н,057 учетный квартал 1780
+</h5></center>
+<center>
+<div style="margin-top: 0px;">
+<a href="https://www.instagram.com/aikorkem_restaurant/"><img src="rtgr.png" style="width: 35px; height: 35px;"></a>
+<a href="https://go.2gis.com/71k9u"><img src="hthf.png" style="width: 35px; height: 35px;"></a>
+</div>
+</center>
+</div>
+
+
+
+
+<center><h5 style="font-family:piazzolla; color: #FF5572; margin-top: 20px; ">Той иелері:
+</h5></center>
+<center><h5 style="font-family:piazzolla; color: #BB172D; margin-top: 0px; ">Айбек-Ботагөз
+</h5></center>
+
+<center>
+<img src="rftgnjytgfnjty.png" style="width: 100%; height: 100%;">
+</center>
+
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https: //fonts.googleapis.com/css2?family= Piazzolla :wght@100 & display=swap" rel="stylesheet">
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+  </body>
+</html>
+
